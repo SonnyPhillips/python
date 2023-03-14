@@ -1,0 +1,125 @@
+#inflation calculator
+import time
+import math
+
+audinflation = 1.078
+usdinflation = 1.064
+gbpinflation = 1.101
+
+
+print ("Welcome to the inflation calculator")
+time.sleep (1.0)
+
+loop1 = True
+print ("First, enter one of three Currencies:")
+while (loop1 ==True):
+    print ("What would you like to calculate?")
+    print ("1. Price of eggs in future?")
+    #chose eggs because thats a common household item and is easily subject to the negative effects of inflation (other choices would be milk or Freddos)
+    print ("2. Value of savings account with compound interest")
+    #unsure whether or not your include inflation rates of currencies as im not an economist
+    loop2 = True
+    while (loop2 ==True):
+        choice1 = input()
+        if (choice1 == "1"):
+            print("")
+            print ("GBP, AUD, USD")
+            currency = input()
+            if currency == "GBP":
+                print ("")
+                print ("Current price of eggs?")
+                poeloop = True
+                while (poeloop == True):
+                    poe = float(input())
+                    print("At Current rates")
+                    print("The price of eggs will be:")
+                    print("---------------------------")
+                    print("£", poe *pow(gbpinflation, 5) ," in 5 years")
+                    print ("£", poe *pow(gbpinflation, 10) ," in 10 years")
+                    print ("£", poe *pow(gbpinflation, 20) , " in 20 years")
+                    time.sleep(1.5)
+                    print("")
+                    print("---------------------------")
+                    poeloop = False
+                    loop2 = False
+            if currency == "AUD":
+                print("")
+                print ("Current price of eggs?")
+                poeloop = True
+                while (poeloop == True):
+                    poe = float(input())
+                    print("At Current rates")
+                    print("The price of eggs will be:")
+                    print("---------------------------")
+                    print("£", poe *pow(audinflation, 5) ," in 5 years")
+                    print ("£", poe *pow(audinflation, 10) ," in 10 years")
+                    print ("£", poe *pow(audinflation, 20) , " in 20 years")
+                    time.sleep(1.5)
+                    print("")
+                    print("---------------------------")
+                    poeloop = False
+                    loop2 = False
+            if currency == "USD":
+                print ("")
+                print ("Current price of eggs?")
+                poeloop = True
+                while (poeloop == True):
+                    poe = float(input())
+                    print("At Current rates")
+                    print("The price of eggs will be:")
+                    print("---------------------------")
+                    print("£", poe *pow(usdinflation, 5) ," in 5 years")
+                    print ("£", poe *pow(usdinflation, 10) ," in 10 years")
+                    print ("£", poe *pow(usdinflation, 20) , " in 20 years")
+                    time.sleep(1.5)
+                    print("")
+                    print("---------------------------")
+                    poeloop = False
+                    loop2 = False
+        if (choice1 == "2"):
+            print("")
+            print ("GBP, AUD, USD")
+            currency = input()
+            if currency == "GBP":
+                print ("Enter Balance:")
+                Balance = float(input())
+                print ("Enter how many years")
+                year = int(input())
+                print ("Enter interest rate (just the number)")
+                interest = float(input())
+                newBal = (Balance*pow(interest, year))
+                newBal = round(newBal)
+                print ("Your future worth is £", newBal)
+                print ("")
+                print ("-----------------------")
+                loop2 = False
+                
+            if currency == "AUD":
+                print("")
+                print ("Enter Balance:")
+                Balance = float(input())
+                print ("Enter how many years")
+                year = int(input())
+                print ("Enter interest rate (just the number)")
+                interest = float(input())
+                newBal = (Balance*pow(interest, year))
+                newBal = round(newBal)
+                print ("Your future worth is $", newBal)
+                print ("")
+                print ("-----------------------")
+                loop2 = False
+            if currency == "USD":
+                print ("")
+                print ("Enter Balance:")
+                Balance = float(input())
+                print ("Enter how many years")
+                year = int(input())
+                print ("Enter interest rate (just the number)")
+                interest = float(input())
+                newBal = (Balance*pow(interest, year))
+                newBal = round(newBal)
+                print ("Your future worth is $", newBal)
+                print ("")
+                print ("-----------------------")
+                loop2 = False
+    #not bad for a day project in a language I haven't used in 2 years
